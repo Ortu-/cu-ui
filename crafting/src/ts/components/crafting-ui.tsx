@@ -46,7 +46,6 @@ export class CraftingUI extends React.Component<CraftingUIProps, CraftingUIState
   }
 
   onCommandBlur = (event: any): void => {
-    console.log('release');
     client.ReleaseInputOwnership();
   }
 
@@ -142,9 +141,6 @@ export class CraftingUI extends React.Component<CraftingUIProps, CraftingUIState
 
   render() {
     let craftWindowClassName: string = this.state.craftingIsActive ? 'crafting-active' : 'crafting-inactive';
-
-    //const crCommands: any[] = this.getCommands();
-
     const cmdList: JSX.Element[] = [];
     let key: number = 0;
     this.state.commandList.forEach((tCmd: any): void => {
@@ -161,7 +157,6 @@ export class CraftingUI extends React.Component<CraftingUIProps, CraftingUIState
         </div>
       );
     });
-
     return (
       <div onKeyDown={this.onKeyDown}>
         <div id='crafting-button' onClick={this.openWindow}></div>
