@@ -6,7 +6,7 @@
 
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import {events, core, client} from 'camelot-unchained';
+import {events} from 'camelot-unchained';
 
 import {BuildingToggle} from './components/building-toggle';
 

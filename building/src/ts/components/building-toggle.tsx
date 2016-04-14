@@ -14,8 +14,6 @@ export interface BuildingToggleState {
   buildingIsActive: boolean;
 };
 
-declare const cuAPI: any;
-
 export class BuildingToggle extends React.Component<BuildingToggleProps, BuildingToggleState> {
   constructor(props: BuildingToggleProps) {
     super(props);
@@ -32,20 +30,17 @@ export class BuildingToggle extends React.Component<BuildingToggleProps, Buildin
 
   toggleBuilding = (): void => {
     this.setState({ buildingIsActive: !this.state.buildingIsActive } as any);
-    cuAPI.ToggleBuildingMode();
+    client.ToggleBuildingMode();
   }
 
   render() {
     let buildClassName: string = this.state.buildingIsActive ? 'button-active' : 'button-inactive';
-    let content: any = (
+    return (
       <div>
         <div id='building-button' onClick={this.toggleBuilding.bind(this, this) }>
           <img className={buildClassName} src='../../interface/images/skillbar/active-frame.gif' />
         </div>
       </div>
-    )
-    return (
-      <div>{content}</div>
     );
   }
 }
